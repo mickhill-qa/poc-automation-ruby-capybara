@@ -1,3 +1,5 @@
-source "https://rubygems.org"
-gem "cucumber"
-gem "rspec"
+source 'https://rubygems.org'
+gem 'capybara'
+gem 'cucumber'
+gem 'rspec'
+gem 'selenium-webdriver'

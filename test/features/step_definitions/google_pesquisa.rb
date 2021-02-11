@@ -1,5 +1,5 @@
 Dado('que eu esteja na pagina inicial do google') do
-
+    visit '/'
 end
 
 Quando('eu pesquisar por um assunto') do

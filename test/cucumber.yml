@@ -1,0 +1,10 @@
+default: --publish-quiet -p pretty -p chrome -p html -p json
+
+pretty: --format pretty
+progress: --format progress
+
+html: --format html --out=results/report.html
+json: --format message --out=results/report.json
+
+chrome: BROWSER=chrome
+firefox: BROWSER=firefox

@@ -1,0 +1,8 @@
+dev:
+  base_url: 'http://dev-google.com'
+
+qa:
+  base_url: 'http://qa-google.com'
+
+prod:
+  base_url: 'https://google.com'

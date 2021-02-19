@@ -3,7 +3,7 @@
 Funcionalidade: Google Pesquisa
 
 Contexto:
-	Dado que eu esteja na pagina inicial do google
+	Dado que eu esteja na pagina inicial
 
 @pesquisaSuccess
 Cenario: Pesquisa Valida

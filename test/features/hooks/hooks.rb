@@ -7,7 +7,7 @@ After do |scenario|
   scenario_name = scenario.name.gsub(/[^\w\-]/, ' ')
 
   if scenario.failed?
-    screenshot_erro(scenario_name.downcase!, 'falhou')
+    screenshot_erro(scenario_name.downcase!)
   end
 end
 

@@ -1,5 +1,6 @@
-Dado('que eu esteja na pagina inicial do google') do
+Dado('que eu esteja na pagina inicial') do
   pagina_inicial.load
+  expect(page.current_url).to eql(BASE_URL)
   screenshot
 end
 
@@ -19,5 +20,5 @@ Quando('eu pesquisar sem preencher o assunto') do
 end
 
 Entao('continuarei na mesma pagian aguardando um assunto') do
-  expect(page.current_url).to eql(BASE_URL['base_url'])
+  expect(page.current_url).to eql(BASE_URL)
 end

@@ -7,7 +7,7 @@ Contexto:
 
 @pesquisaSuccess
 Cenario: Pesquisa Valida
-	Quando eu pesquisar por um assunto
+	Quando eu pesquisar por "um assunto"
 	Entao me retorna os resultados indexados
 
 @pesquisaUndefined

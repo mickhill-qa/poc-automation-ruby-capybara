@@ -3,9 +3,13 @@
 #     log 'Inicio de todos os Cenarios.'
 # end
 
-# After do
-#     log 'Fim de todos os Cenarios.'
-# end
+After do |scenario|
+  scenario_name = scenario.name.gsub(/[^\w\-]/, ' ')
+
+  if scenario.failed?
+    screenshot_erro(scenario_name.downcase!, 'falhou')
+  end
+end
 
 
 ### Tag ###

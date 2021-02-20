@@ -1,21 +1,22 @@
-default: --publish-quiet -p pretty -p html -p json -p env_qa
+## YAML Templates
+---
+#Tudo que será executado
+default: --publish-quiet -p pretty -p chrome -p html -p json -p qa
+ci: --publish-quiet -p pretty -p chrome_headless -p html -p json
 
+#Formato de execução
 pretty: --format pretty
+progress: --format progress
 
+#Navegadores
+chrome: BROWSER=chrome
+chrome_headless: BROWSER=chrome_headless
+
+#Caminhos dos relatorios 
 html: --format html --out=results/report.html
-json: --format message --out=results/report.json
+json: --format json --out=results/report.json
 
-
-## Como Usar? ##
-# no terminal:
-#
-#   $ cucumber -p env_dev
-#       ou
-#   $ cucumber ENVIRONMENT=dev
-#
-# Obs.: O padra é env_qa
-#
-#
-env_dev: ENVIRONMENT=dev
-env_qa: ENVIRONMENT=qa
-env_prod: ENVIRONMENT=prod
+#Ambientes
+dev: ENV=dev
+qa: ENV=qa
+prod: ENV=prod

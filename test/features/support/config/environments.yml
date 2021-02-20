@@ -1,8 +1,8 @@
 dev:
-  base_url: 'http://dev-google.com'
+  base_url: 'https://www.google.com.br/'
 
 qa:
-  base_url: 'http://qa-google.com'
+  base_url: 'https://www.google.com.br/'
 
 prod:
-  base_url: 'https://google.com'
+  base_url: 'https://www.google.com.br/'

@@ -3,11 +3,11 @@
 Funcionalidade: Google Pesquisa
 
 Contexto:
-	Dado que eu esteja na pagina inicial do google
+	Dado que eu esteja na pagina inicial
 
 @pesquisaSuccess
 Cenario: Pesquisa Valida
-	Quando eu pesquisar por um assunto
+	Quando eu pesquisar por "um assunto"
 	Entao me retorna os resultados indexados
 
 @pesquisaUndefined

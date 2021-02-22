@@ -1,0 +1,22 @@
+## YAML Templates
+---
+#Tudo que será executado
+default: --publish-quiet -p pretty -p chrome -p html -p json -p qa
+ci: --publish-quiet -p pretty -p chrome_headless -p html -p json
+
+#Formato de execução
+pretty: --format pretty
+progress: --format progress
+
+#Navegadores
+chrome: BROWSER=chrome
+chrome_headless: BROWSER=chrome_headless
+
+#Caminhos dos relatorios 
+html: --format html --out=results/report.html
+json: --format json --out=results/report.json
+
+#Ambientes
+dev: ENV=dev
+qa: ENV=qa
+prod: ENV=prod

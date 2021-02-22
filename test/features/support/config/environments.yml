@@ -1,0 +1,8 @@
+dev:
+  base_url: 'https://www.google.com.br/'
+
+qa:
+  base_url: 'https://www.google.com.br/'
+
+prod:
+  base_url: 'https://www.google.com.br/'

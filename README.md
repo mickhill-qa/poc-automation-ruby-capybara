@@ -11,16 +11,41 @@ gem  'report_builder'
 gem  'json'
 ```
 
+Estrutura do projeto:
+```
+├── test/
+│   ├── features/
+│   │   ├── hooks/
+│   │   ├── pages/
+│   │   ├── specs/
+│   │   ├── step_definitions/
+│   │   └── support/
+│   │       ├── config/
+│   │       │   └── environments.yml
+│   │       ├── helpers/
+│   │       │   ├── page_helper.rb
+│   │       │   └── screenshot_helper.rb
+│   │       └── env.rb
+│   ├── results/
+│   │   ├── report-builder/
+│   │   └── screenshots/
+│   ├── Gemfile
+│   ├── Gemfile.lock
+│   └── cucumber.yml
+├── .gitignore
+└── README.md
+```
+
 
 ## Configurando ambiente local
 
-Assumimos que você já ***possui o Ruby disponível no terminal***. Agora você precisará do **ChormeDriver** disponível no terminal e do **bundler** para baixar todas as dependências dos pacotes do projeto, conforme o arquivo **Gemfile.lock**.
+Assumimos que você já ***possui o Ruby disponível no terminal***. Agora você precisará do **ChormeDriver** disponível no terminal e do **bundler** para baixar todas as dependências dos pacotes do projeto, conforme o arquivo **[Gemfile.lock](https://github.com/mickhill-qa/learning-ruby-capybara/blob/main/test/Gemfile.lock)**.
 
 Para instalar o bundler executando o seguinte comando no terminal:
 ```
 gem install bundler
 ```
-Para baixar as dependências de pacote deste projeto abra a pasta "**test/**" no terminal e execute o comando:
+Para baixar as dependências de pacote deste projeto abra a pasta "**[test/](https://github.com/mickhill-qa/learning-ruby-capybara/tree/main/test)**" no terminal e execute o comando:
 ```
 bundler install
 ```
@@ -49,7 +74,7 @@ cucumber -t @myTag
 
 ## Alternando execução entre ambientes
 
-Por padrão os testes iram rodar usando a url de **QA** conforme arquivo "**test/features/support/config/environments.yml**". 
+Por padrão os testes iram rodar usando a url de **QA** conforme arquivo "**[environments.yml](https://github.com/mickhill-qa/learning-ruby-capybara/blob/main/test/features/support/config/environments.yml)**". 
 
 Os ambiente disponíveis são:
 - dev
@@ -61,8 +86,7 @@ Para alterar em tempo de execução, adiciona o parâmetro "**ENV**" no terminal
 cucumber ENV=dev
 ```
 
-Para alterar o padrão vá até o arquivo"**test/cucumber.yml**" e altere a linha 4:
-
+Para alterar o padrão vá até o arquivo "**[cucumber.yml](https://github.com/mickhill-qa/learning-ruby-capybara/blob/main/test/cucumber.yml)**" e altere a linha 4:
 ```
 default: (...) -p qa
 ```

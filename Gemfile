@@ -1,12 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'json'
-
 group :test do
   gem 'capybara'
   gem 'cucumber'
+  gem 'json'
+  gem 'report_builder'
   gem 'rspec'
   gem 'selenium-webdriver'
   gem 'site_prism'
-  gem 'report_builder'
 end

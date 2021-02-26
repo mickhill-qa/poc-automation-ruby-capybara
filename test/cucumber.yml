@@ -5,7 +5,7 @@ default: --publish-quiet -p pretty -p chrome -p html -p json -p qa
 ci: --publish-quiet -p pretty -p chrome_headless -p html -p json
 
 #Formato de execução
-pretty: --format pretty
+pretty: --format pretty --color -r features
 progress: --format progress
 
 #Navegadores

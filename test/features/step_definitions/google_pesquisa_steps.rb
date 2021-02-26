@@ -1,3 +1,5 @@
+page_home = GoogleHome.new
+
 Dado('que eu esteja na pagina inicial') do
   page_home.load
   expect(page.current_url).to eql(BASE_URL)

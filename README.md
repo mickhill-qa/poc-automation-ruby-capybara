@@ -25,7 +25,8 @@ Estrutura do projeto:
 │   │       │   └── environments.yml
 │   │       ├── helpers/
 │   │       │   └── screenshot_helper.rb
-│   │       └── env.rb
+│   │       ├── env.rb
+│   │       └── report_builder.rb
 │   ├── reports/
 │   │   ├── report-builder/
 │   │   └── screenshots/

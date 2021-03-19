@@ -13,8 +13,8 @@ chrome: BROWSER=chrome
 chrome_headless: BROWSER=chrome_headless
 
 #Caminhos dos relatorios 
-html: --format html --out=results/report.html
-json: --format json --out=results/report.json
+html: --format html --out=reports/report.html
+json: --format json --out=reports/report.json
 
 #Ambientes
 dev: ENV=dev

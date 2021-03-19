@@ -26,7 +26,7 @@ Estrutura do projeto:
 │   │       ├── helpers/
 │   │       │   └── screenshot_helper.rb
 │   │       └── env.rb
-│   ├── results/
+│   ├── reports/
 │   │   ├── report-builder/
 │   │   └── screenshots/
 │   └── cucumber.yml

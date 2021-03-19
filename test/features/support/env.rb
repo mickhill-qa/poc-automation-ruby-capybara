@@ -27,8 +27,8 @@ BASE_URL         = !ENV['URL'].nil? ? ENV['URL'] : ENVIRONMENT['base_url']
 
 
 ## Paths Default
-SCREENSHOT_PATH  = "results/screenshots/"
-REPORT_PATH      = "results/report-builder/"
+SCREENSHOT_PATH  = "reports/screenshots/"
+REPORT_PATH      = "reports/report-builder/"
 
 
 case SELECTED_ENV
@@ -83,26 +83,6 @@ when SELECTED_BROWSER.blank?
 end
 
 
-
-## Gerar relatorio ao final da execucao
-at_exit do
-  ReportBuilder.configure do |config|
-    config.json_path        = "results/report.json"                                                                                   # pasta onde salva o json
-    config.report_path      = REPORT_PATH + Time.now.strftime('%Y-%m-%d_-_%H-%M-%S_-_').to_s + SELECTED_ENV + '_' + SELECTED_BROWSER  # pasta onde salva o html
-    config.report_types     = [:html]                                                                                                 # tipo de report a exportar
-    config.report_title     = "Cucumber Report"                                                                                       # nome do report - <img src='#' />
-    config.color            = "blue"                                                                                                  # cor do report
-    config.include_images   = true                                                                                                    # se coloca imagens ou não
-    config.additional_info  = {
-      'Date': Time.now,
-      'Browser': SELECTED_BROWSER, 
-      'Environment': SELECTED_ENV,
-      'Url': BASE_URL,
-      'Runtime': "ruby - #{RUBY_VERSION}"
-    } 
-  end
-  ReportBuilder.build_report
-end
 
 ## Execucao dos testes
 Capybara.configure do |config|

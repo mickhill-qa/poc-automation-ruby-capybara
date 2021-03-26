@@ -7,6 +7,8 @@ require 'selenium-webdriver'
 require 'site_prism'
 require 'report_builder'
 require 'json'
+require 'aws-sdk-secretsmanager'
+require 'base64'
 
 
 ## Global

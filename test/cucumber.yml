@@ -1,8 +1,8 @@
 ## YAML Templates
 ---
 #Tudo que será executado
-default: --publish-quiet -p pretty -p chrome -p html -p json -p qa
-ci: --publish-quiet -p pretty -p chrome_headless -p html -p json
+default: --publish-quiet -p pretty -p chrome -p html -p json -p dev
+ci: --publish-quiet -p progress -p chrome_headless -p html -p json -p dev
 
 #Formato de execução
 pretty: --format pretty --color -r features

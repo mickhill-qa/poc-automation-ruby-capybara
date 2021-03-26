@@ -9,6 +9,7 @@ gem 'report_builder'
 gem 'rspec'
 gem 'selenium-webdriver'
 gem 'site_prism'
+gem 'aws-sdk-secretsmanager', '~> 1.44'
 ```
 
 Estrutura do projeto:
@@ -24,6 +25,8 @@ Estrutura do projeto:
 │   │       ├── config/
 │   │       │   └── environments.yml
 │   │       ├── helpers/
+│   │       │   ├── aws_secrets_helper.rb
+│   │       │   ├── page_helper.rb
 │   │       │   └── screenshot_helper.rb
 │   │       ├── env.rb
 │   │       └── report_builder.rb

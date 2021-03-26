@@ -19,3 +19,5 @@ module ScreenshotHelper
     attach(img_base64, 'image/png;base64')
   end
 end
+
+World ScreenshotHelper

@@ -9,16 +9,17 @@ require 'report_builder'
 require 'json'
 
 
-## Arquivo que inicia todas as minhas classes
-require_relative 'helpers/page_helper.rb'
-require_relative 'helpers/screenshot_helper.rb'
-
-
 ## Global
 World Capybara::DSL
 World Capybara::RSpecMatchers
-World PageHelper
-World ScreenshotHelper
+
+
+## Helpers
+Dir[File.join(
+  File.dirname(__FILE__),'/helpers/*.rb' )
+].each do |file|
+  require_relative file
+end
 
 
 ## Definiçoes de ambiente

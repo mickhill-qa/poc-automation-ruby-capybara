@@ -7,3 +7,5 @@ module PageHelper
     @page_home = GoogleHome.new
   end
 end
+
+World PageHelper

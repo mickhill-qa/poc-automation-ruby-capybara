@@ -14,13 +14,6 @@ require 'base64'
 World Capybara::DSL
 World Capybara::RSpecMatchers
 
-## Helpers
-Dir[File.join(
-  File.dirname(__FILE__), '/helpers/*.rb')
-].each do |file|
-  require_relative file
-end
-
 ## Definiçoes de Ambiente
 # escolhido em cucumber.yml
 # prod, dev, qa
@@ -78,10 +71,17 @@ when "chrome_headless"
 end
 
 ## Defaults
-ENVIRONMENT = YAML.load_file(File.dirname(__FILE__) + "/config/environments.yml")[SELECTED_ENV]
-BASE_URL = !ENV['URL'].nil? ? ENV['URL'] : ENVIRONMENT['base_url']
+ENVIRONMENT     = YAML.load_file(File.dirname(__FILE__) + "/config/environments.yml")[SELECTED_ENV]
+BASE_URL        = !ENV['URL'].nil? ? ENV['URL'] : ENVIRONMENT['base_url']
 SCREENSHOT_PATH = "reports/screenshots/"
-REPORT_PATH = "reports/report-builder/"
+REPORT_PATH     = "reports/report-builder/"
+
+## Helpers
+Dir[File.join(
+  File.dirname(__FILE__), '/helpers/*.rb')
+].each do |file|
+  require_relative file
+end
 
 ## Execucao dos testes
 Capybara.configure do |config|

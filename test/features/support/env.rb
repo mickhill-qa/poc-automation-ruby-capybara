@@ -85,7 +85,7 @@ end
 
 ## Execucao dos testes
 Capybara.configure do |config|
-  config.default_driver = @driver ## Variavel para definissão de Browser
-  config.default_max_wait_time = 5 ## Time global de espera
-  config.app_host = BASE_URL
+  config.default_driver        = @driver              ## Variavel para definissão de Browser
+  config.default_max_wait_time = 5                    ## Time global de espera
+  config.app_host              = BASE_URL
 end

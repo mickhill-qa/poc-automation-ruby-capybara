@@ -17,4 +17,3 @@ at_exit do
   end
   ReportBuilder.build_report
 end
-

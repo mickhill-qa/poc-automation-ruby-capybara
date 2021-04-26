@@ -6,7 +6,8 @@ at_exit do
     config.report_types     = [:html]                                                                                                 # tipo de report a exportar
     config.report_title     = "Cucumber Report"                                                                                       # nome do report - <img src='#' />
     config.color            = "blue"                                                                                                  # cor do report
-    config.include_images   = true                                                                                                    # se coloca imagens ou não
+    config.compress_images  = false
+    config.include_images   = true                                                                                                    # coloca imagens ou não
     config.additional_info  = {
       'Date': Time.now,
       'Browser': SELECTED_BROWSER,
@@ -16,4 +17,6 @@ at_exit do
     }
   end
   ReportBuilder.build_report
+
+  puts "\nReportBuilder \n#{ReportBuilder.report_path}.#{ReportBuilder.report_types[0].downcase}"
 end

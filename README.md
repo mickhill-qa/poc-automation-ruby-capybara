@@ -93,11 +93,11 @@ Para utilizar o "**[AWS Secrets Manager](https://docs.aws.amazon.com/pt_br/secre
 
 Para executar os testes localmente deste projeto abra a pasta "**[test/](https://github.com/mickhill-qa/learning-ruby-capybara/tree/main/test/)**" no terminal e execute o comando:
 ```
-cucumber
+    cucumber
 ```
 Ou para um cenário específico:
 ```
-cucumber -t @myTag
+    cucumber -t @myTag
 ```
 
 
@@ -112,10 +112,10 @@ Os ambiente disponíveis são:
 
 Para alterar em tempo de execução, adiciona o parâmetro "**ENV**" no terminal:
 ```
-cucumber ENV=qa
+    cucumber ENV=qa
 ```
 
 Para alterar o padrão vá até o arquivo "**[cucumber.yml](https://github.com/mickhill-qa/learning-ruby-capybara/blob/main/test/cucumber.yml)**" e altere a linha 4:
 ```
-default: (...) -p dev
+    default: (...) -p dev
 ```

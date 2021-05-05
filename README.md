@@ -19,7 +19,7 @@
 [![SitePrism Version][site_prism-image]][site_prism-url]
 [![ReportBuilder Version][report_builder-image]][report_builder-url]
 
-Estrutura do projeto:
+### Estrutura do projeto
 ```
 ./
 ├── test/
@@ -48,29 +48,47 @@ Estrutura do projeto:
 ```
 
 
+---
 ## Configurando ambiente local
 
-Assumimos que você já ***possui o Ruby disponível no terminal***. Agora você precisará do **ChormeDriver** disponível no terminal e do **bundler** para baixar todas as dependências dos pacotes do projeto, conforme o arquivo **[Gemfile.lock](https://github.com/mickhill-qa/learning-ruby-capybara/blob/main/Gemfile.lock)**.
+Assumimos que você já ***possui o Ruby disponível no terminal***. Agora você precisará do **WebDriver** para uso do Browser, do **bundler** para baixar as dependências de pacotes do projeto conforme o arquivo "**[Gemfile.lock](https://github.com/mickhill-qa/learning-ruby-capybara/blob/main/Gemfile.lock)**" e do **AWS toolkit plugin** para acessar a massa de testes usada no projeto.
 
+
+### Instalar Bundler
 Para instalar o bundler executando o seguinte comando no terminal:
 ```
-gem install bundler
+    gem install bundler
 ```
 Para baixar as dependências de pacote deste projeto abra a pasta "**[raiz](https://github.com/mickhill-qa/learning-ruby-capybara/tree/main/)**" no terminal e execute o comando:
 ```
-bundler install
-```
-
-Para configurar o **[ChormeDriver](https://chromedriver.chromium.org/downloads)** baixe o arquivo referente a sua versão de navegador. 
-No **Windows**: Descompacte na pasta onde ele irá ficar e adicione-o no PATH do sistema. 
-No **Linux/MacOS**: Descompacte o arquivo, abra o terminal nesta pasta e execute os seguintes comandos:
-```
-sudo mv chromedriver /usr/bin/chromedriver
-sudo chown root:root /usr/bin/chromedriver
-sudo chmod +x /usr/bin/chromedriver
+    bundler install
 ```
 
 
+### Instalar WebDriver
+Para configurar o **[ChormeDriver](https://chromedriver.chromium.org/downloads)** baixe o arquivo referente a sua versão de navegador.
+- No **Linux**: Descompacte o arquivo, abra o terminal nesta pasta e execute os seguintes comandos
+```
+    sudo mv chromedriver /usr/bin/chromedriver
+    sudo chown root:root /usr/bin/chromedriver
+    sudo chmod +x /usr/bin/chromedriver
+```
+- No **MacOS**: Descompacte o arquivo, abra o terminal nesta pasta e execute os seguintes comandos
+```
+    sudo mv chromedriver /usr/local/bin
+    sudo chmod +x /usr/bin/chromedriver
+```
+
+- No **Windows**: Descompacte na pasta onde ele irá ficar e adicione-o no PATH do sistema.
+
+
+### Instalar AWS toolkit plugin
+Para utilizar o "**[AWS Secrets Manager](https://docs.aws.amazon.com/pt_br/secretsmanager/latest/userguide/intro.html)**", será necessário instalar o plugin AWS toolkit plugin na IDE utilizada.
+- **VSCode**: Para instalar o plugin no Visual Studio Code deve seguir os passos neste link "**[VSCode](https://aws.amazon.com/visualstudiocode/)**".
+- **RubyMine**: Para instalar o plugin na Jetbrains deve seguir os passos neste link "**[RubyMine](https://docs.aws.amazon.com/toolkit-for-jetbrains/latest/userguide/setup-toolkit.html)**".
+
+
+---
 ## Executando testes localmente
 
 Para executar os testes localmente deste projeto abra a pasta "**[test/](https://github.com/mickhill-qa/learning-ruby-capybara/tree/main/test/)**" no terminal e execute o comando:

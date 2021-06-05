@@ -76,7 +76,7 @@ Para configurar o **[ChormeDriver](https://chromedriver.chromium.org/downloads)*
 - No **MacOS**: Descompacte o arquivo, abra o terminal nesta pasta e execute os seguintes comandos
 ```
     sudo mv chromedriver /usr/local/bin
-    sudo chmod +x /usr/bin/chromedriver
+    sudo chmod +x /usr/local/bin/chromedriver
 ```
 
 - No **Windows**: Descompacte na pasta onde ele irá ficar e adicione-o no PATH do sistema.

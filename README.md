@@ -61,7 +61,7 @@ Para instalar o bundler executando o seguinte comando no terminal:
 ```
 Para baixar as dependências de pacote deste projeto abra a pasta "**[raiz](https://github.com/mickhill-qa/learning-ruby-capybara/tree/main/)**" no terminal e execute o comando:
 ```
-    bundler install
+    bundle install
 ```
 
 

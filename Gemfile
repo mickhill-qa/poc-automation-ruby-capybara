@@ -10,4 +10,5 @@ group :test do
   gem 'site_prism'
   gem 'chromedriver-helper', '~> 2.1', '>= 2.1.1'
   gem 'aws-sdk-secretsmanager', '~> 1.44'
+  gem 'rubycritic', '~> 4.6', '>= 4.6.1', require: false
 end

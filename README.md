@@ -51,8 +51,7 @@
 ---
 ## Configurando ambiente local
 
-Assumimos que você já ***possui o Ruby disponível no terminal***. Agora você precisará do **bundler** para baixar as dependências de pacotes do projeto conforme o arquivo "**[Gemfile.lock](https://github.com/mickhill-qa/learning-ruby-capybara/blob/main/Gemfile.lock)**" do **WebDriver** para uso do Browser (*Que já está embarcado no projeto através da `gem` **[chromedriver-helper](https://rubygems.org/gems/chromedriver-helper/)***) e do **AWS toolkit plugin** para acessar a massa de testes usada no projeto.
-
+Assumimos que você já ***possui o Ruby disponível no terminal***. Agora você precisará do **ChormeDriver** disponível no terminal e do **bundler** para baixar todas as dependências dos pacotes do projeto, conforme o arquivo **[Gemfile.lock](https://github.com/mickhill-qa/learning-ruby-capybara/blob/main/Gemfile.lock)**.
 
 ### Instalar Bundler
 Para instalar o bundler executando o seguinte comando no terminal:
@@ -63,6 +62,23 @@ Para baixar as dependências de pacote deste projeto abra a pasta "**[raiz](http
 ```
     bundle install
 ```
+
+
+### Instalar WebDriver
+Para configurar o **[ChormeDriver](https://chromedriver.chromium.org/downloads)** baixe o arquivo referente a sua versão de navegador.
+- No **Linux**: Descompacte o arquivo, abra o terminal nesta pasta e execute os seguintes comandos
+```
+    sudo mv chromedriver /usr/bin/chromedriver
+    sudo chown root:root /usr/bin/chromedriver
+    sudo chmod +x /usr/bin/chromedriver
+```
+- No **MacOS**: Descompacte o arquivo, abra o terminal nesta pasta e execute os seguintes comandos
+```
+    sudo mv chromedriver /usr/local/bin
+    sudo chmod +x /usr/local/bin/chromedriver
+```
+
+- No **Windows**: Descompacte na pasta "C:\Windows".
 
 
 ### Instalar AWS toolkit plugin

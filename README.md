@@ -51,8 +51,7 @@
 ---
 ## Configurando ambiente local
 
-Assumimos que você já ***possui o Ruby disponível no terminal***. Agora você precisará do **WebDriver** para uso do Browser, do **bundler** para baixar as dependências de pacotes do projeto conforme o arquivo "**[Gemfile.lock](https://github.com/mickhill-qa/learning-ruby-capybara/blob/main/Gemfile.lock)**" e do **AWS toolkit plugin** para acessar a massa de testes usada no projeto.
-
+Assumimos que você já ***possui o Ruby disponível no terminal***. Agora você precisará do **ChormeDriver** disponível no terminal e do **bundler** para baixar todas as dependências dos pacotes do projeto, conforme o arquivo **[Gemfile.lock](https://github.com/mickhill-qa/learning-ruby-capybara/blob/main/Gemfile.lock)**.
 
 ### Instalar Bundler
 Para instalar o bundler executando o seguinte comando no terminal:
@@ -61,7 +60,7 @@ Para instalar o bundler executando o seguinte comando no terminal:
 ```
 Para baixar as dependências de pacote deste projeto abra a pasta "**[raiz](https://github.com/mickhill-qa/learning-ruby-capybara/tree/main/)**" no terminal e execute o comando:
 ```
-    bundler install
+    bundle install
 ```
 
 
@@ -76,10 +75,10 @@ Para configurar o **[ChormeDriver](https://chromedriver.chromium.org/downloads)*
 - No **MacOS**: Descompacte o arquivo, abra o terminal nesta pasta e execute os seguintes comandos
 ```
     sudo mv chromedriver /usr/local/bin
-    sudo chmod +x /usr/bin/chromedriver
+    sudo chmod +x /usr/local/bin/chromedriver
 ```
 
-- No **Windows**: Descompacte na pasta onde ele irá ficar e adicione-o no PATH do sistema.
+- No **Windows**: Descompacte na pasta "C:\Windows".
 
 
 ### Instalar AWS toolkit plugin
@@ -93,11 +92,11 @@ Para utilizar o "**[AWS Secrets Manager](https://docs.aws.amazon.com/pt_br/secre
 
 Para executar os testes localmente deste projeto abra a pasta "**[test/](https://github.com/mickhill-qa/learning-ruby-capybara/tree/main/test/)**" no terminal e execute o comando:
 ```
-cucumber
+    cucumber
 ```
 Ou para um cenário específico:
 ```
-cucumber -t @myTag
+    cucumber -t @myTag
 ```
 
 
@@ -112,10 +111,10 @@ Os ambiente disponíveis são:
 
 Para alterar em tempo de execução, adiciona o parâmetro "**ENV**" no terminal:
 ```
-cucumber ENV=qa
+    cucumber ENV=qa
 ```
 
 Para alterar o padrão vá até o arquivo "**[cucumber.yml](https://github.com/mickhill-qa/learning-ruby-capybara/blob/main/test/cucumber.yml)**" e altere a linha 4:
 ```
-default: (...) -p dev
+    default: (...) -p dev
 ```

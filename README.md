@@ -47,9 +47,50 @@
 └── README.md
 ```
 
-* [Configurando ambiente local](docs/config-env.md)
-    * Instalar Bundler
-    * Instalar WebDriver
-    * Instalar AWS toolkit plugin
 
-* [Executando testes localmente](docs/exec-test.md)
+---
+Configurar Ambiente
+-------------
+Assumimos que você já ***possui o Ruby disponível no terminal***, caso não possua segue um passo a passo.
+* [Instalar Ruby](docs/config-env/)
+
+Instale e configure uma IDE com o **AWS toolkit plugin** para acessar a massa de testes usada no projeto.
+* [Ecolher IDE](docs/config-env/) (Instalar Cucumber)
+* [Instalar AWS toolkit plugin](docs/config-env/install-aws-toolkit-plugin.md)
+  
+Agora você precisará do **WebDriver** para uso do Browser e do **bundler** para baixar as dependências de pacotes do projeto ruby conforme o arquivo ***"[Gemfile](Gemfile)"***.
+* [Instalar WebDriver](docs/config-env/install-webdriver.md)
+* [Instalar Bundler](docs/config-env/install-bundler.md)
+
+
+---
+Executar Testes
+-------------
+Para executar os testes localmente deste projeto abra a pasta "**[test/](test/)**" no terminal e execute o comando:
+```
+cucumber
+```
+Ou para um cenário específico:
+```
+cucumber -t @myTag
+```
+
+
+---
+Alterar Ambientes de Execução
+-------------
+Por padrão os testes iram rodar usando a url de **DEV** conforme arquivo "**[environments.yml](test/features/support/config/environments.yml)**".
+
+Os ambiente disponíveis são:
+- dev
+- qa
+- prod
+
+Para alterar em tempo de execução, adiciona o parâmetro "**ENV**" no terminal:
+```
+cucumber ENV=qa
+```
+Para alterar o padrão vá até o arquivo "**[cucumber.yml](test/cucumber.yml)**" e altere a linha 4:
+```
+default: (...) -p dev
+```

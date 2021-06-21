@@ -1,4 +1,4 @@
-### Instalar Bundler
+## Instalar Bundler
 Para instalar o bundler executando o seguinte comando no terminal:
 ```
 gem install bundler

@@ -1,4 +1,4 @@
-### Instalar WebDriver
+## Instalar WebDriver
 Para configurar o **[ChormeDriver](https://chromedriver.chromium.org/downloads)**...
 - No **Windows**: Baixe o arquivo referente a sua versão de navegador e descompacte na pasta ***"C:\Windows"***.
   

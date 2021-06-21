@@ -52,7 +52,7 @@
 Configurar Ambiente
 -------------
 Assumimos que você já ***possui o Ruby disponível no terminal***, caso não possua segue um passo a passo.
-* [Instalar Ruby](docs/config-env/)
+* [Instalar Ruby](docs/config-env/install-ruby.md)
 
 Instale e configure uma IDE com o **AWS toolkit plugin** para acessar a massa de testes usada no projeto.
 * [Ecolher IDE](docs/config-env/) (Instalar Cucumber)

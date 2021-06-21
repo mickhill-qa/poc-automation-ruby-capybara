@@ -55,7 +55,6 @@ Assumimos que você já ***possui o Ruby disponível no terminal***, caso não p
 * [Instalar Ruby](docs/config-env/install-ruby.md)
 
 Instale e configure uma IDE com o **AWS toolkit plugin** para acessar a massa de testes usada no projeto.
-* [Ecolher IDE](docs/config-env/) (Instalar Cucumber)
 * [Instalar AWS toolkit plugin](docs/config-env/install-aws-toolkit-plugin.md)
   
 Agora você precisará do **WebDriver** para uso do Browser e do **bundler** para baixar as dependências de pacotes do projeto ruby conforme o arquivo ***"[Gemfile](Gemfile)"***.

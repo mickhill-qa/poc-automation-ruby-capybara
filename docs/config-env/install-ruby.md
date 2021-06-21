@@ -1,12 +1,26 @@
 ### Instalar Ruby
 Para configurar o...
-- No **Windows**: 
+#### **Windows**:
+
 
 ---
-- No **Linux**:
+#### **Linux**
+Para a instalação do Ruby nós vamos usar o **RVM**(*Ruby Version Manager*).
+  - **[Install RVM](https://rvm.io/rvm/install)**:
+    - Instale as chaves GPG usadas para verificar o pacote de instalação:
+      ```
+      gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+      ```
+      
+    - Abra o terminal e instale o **RVM** executando o seguinte comando:
+      ```
+      \curl -sSL https://get.rvm.io | bash -s stable --ruby
+      ```
+
 
 ---
-- No **MacOS**: Para a instalação do Ruby nos vamos usar o **RVM**(*Ruby Version Manager*) e algumas outras dependência como o **Xcode** e **Homebrew** -> **Wget**.
+#### **MacOS**
+  Para a instalação do Ruby nós vamos usar o **RVM**(*Ruby Version Manager*) e algumas outras dependência como o **Xcode** e **Homebrew** -> **Wget**.
 
   - **[Install Xcode](https://apps.apple.com/br/app/xcode/id497799835?mt=12)**: 
     - Abra a *App Store*, procure  e instale o "Xcode";
@@ -20,7 +34,35 @@ Para configurar o...
       ```
 
   - **[Install RVM](https://rvm.io/rvm/install)**:
-    - Abra o terminal e execute o seguinte comando:
+    - Abra o terminal e instale o **RVM** executando o seguinte comando:
       ```
       \curl -sSL https://get.rvm.io | bash -s stable --ruby
       ```
+
+---
+#### Como usar o RVM? *(Linux e MacOS)*
+
+  - **Visualizar** as versões do Ruby instaladas:
+    ```
+    rvm list
+    ```
+  - **Visualizar** outras versões do Ruby **disponiveis para Instalação**:
+    ```
+    rvm list known
+    ```
+  - **Instalar** outra versão do Ruby:
+    ```
+    rvm install 2.7
+    ```
+  - **Instalar** outra versão do Ruby e já **definir como padrão**:
+    ```
+    rvm install 2.7@global
+    ```
+  - **Trocar** a versão padrão instalada do Ruby:
+    ```
+    rvm use 2.7 --default
+    ```
+  - **Remover** uma versão instalada do Ruby:
+    ```
+    rvm remove ruby-3
+    ```

@@ -1,5 +1,5 @@
 ## Instalar WebDriver
-Abra o site do **[ChormeDriver](https://chromedriver.chromium.org/downloads)** e baixe a verão de acordo com o seu navegador.
+Abra o site do **[ChormeDriver](https://chromedriver.chromium.org/downloads)** e baixe a versão de acordo com o seu navegador.
 
 ---
 #### **Windows**
@@ -35,14 +35,14 @@ sudo chmod +x /usr/local/bin/chromedriver
 
 ---
 ### `gem` **ChromeDriver-Helper** *(Linux e MacOS)*
-Caso você estejá usando **Linux** ou **MacOS** 
+Caso você esteja usando **Linux** ou **MacOS** 
 e não quer instalar o WebDriver como nas opções acima, 
 instale a `gem` **[chromedriver-helper](https://rubygems.org/gems/chromedriver-helper/)**. 
 
 Obs.: Não funciona no windows.
 
 Esta pode ser baixada junto com as outras dependências de pacote do [Bundler](install-bundler.md), 
-sendo necessario alterações em dois arquivos; Adicione as seguintes linhas aos arquivos:
+sendo necessárias as alterações em dois arquivos; Adicione as seguintes linhas aos arquivos:
 
 ***Gemfile***
 ```

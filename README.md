@@ -54,7 +54,7 @@ Configurar Ambiente
 Assumimos que você já ***possui o Ruby disponível no terminal***, caso não possua segue um passo a passo.
 * [Instalar Ruby](docs/config-env/install-ruby.md)
 
-Instale e configure uma IDE com o **AWS toolkit plugin** para acessar a massa de testes usada no projeto.
+Instale e configure uma IDE com o **AWS toolkit plugin** para possibilitar o uso do SecretsMenager para guardar as massas de testes do projeto.
 * [Instalar AWS toolkit plugin](docs/config-env/install-aws-toolkit-plugin.md)
   
 Agora você precisará do **WebDriver** para uso do Browser e do **bundler** para baixar as dependências de pacotes do projeto ruby conforme o arquivo ***"[Gemfile](Gemfile)"***.
@@ -78,14 +78,14 @@ cucumber -t @myTag
 ---
 Alterar Ambientes de Execução
 -------------
-Por padrão os testes iram rodar usando a url de **DEV** conforme arquivo "**[environments.yml](test/features/support/config/environments.yml)**".
+Por padrão os testes irão rodar usando a url de **DEV** conforme arquivo "**[environments.yml](test/features/support/config/environments.yml)**".
 
 Os ambiente disponíveis são:
 - dev
 - qa
 - prod
 
-Para alterar em tempo de execução, adiciona o parâmetro "**ENV**" no terminal:
+Para alterar em tempo de execução, adicione o parâmetro "**ENV**" no terminal:
 ```
 cucumber ENV=qa
 ```

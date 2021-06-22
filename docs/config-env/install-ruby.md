@@ -2,7 +2,7 @@
 
 
 #### **Windows**
-Para instalar o Ruby vamos até o site: [RubyInstaller.org / Downloads](https://rubyinstaller.org/downloads/); Baixe o instalador com DevKIT da verão desejada, depois é só *"Next, Next, Install e Finish"*.
+Para instalar o Ruby vamos até o site: [RubyInstaller.org / Downloads](https://rubyinstaller.org/downloads/); Baixe o instalador com DevKIT da versão desejada, depois é só *"Next, Next, Install e Finish"*.
 
 Em seguida um **Command Prompt** será aberto: Pressione *Enter* e espere finalizar.
 
@@ -24,15 +24,15 @@ Para a instalação do Ruby nós vamos usar o **RVM**(*Ruby Version Manager*).
 
 ---
 #### **MacOS**
-  Para a instalação do Ruby nós vamos usar o **RVM**(*Ruby Version Manager*) e algumas outras dependência como o **Xcode** e **Homebrew** -> **Wget**.
+  Para a instalação do Ruby nós vamos usar o **RVM**(*Ruby Version Manager*) e algumas outras dependências como o **Xcode** e **Homebrew** -> **Wget**.
 
   - **[Install Xcode](https://apps.apple.com/br/app/xcode/id497799835?mt=12)**: 
     - Abra a *App Store*, procure  e instale o "Xcode";
-    - Apos a instalação, *Abra o Xcode e Aceite os Termos*.
+    - Após a instalação, *Abra o Xcode e Aceite os Termos*.
 
   - **[Install Homebrew](https://brew.sh/)** (Wget):
     - Abra o Site do "Homebrew" e *siga as instruções de instalação*;
-    - Apos a instalação, abra o terminal e instale o "wget" com o seguinte comando:
+    - Após a instalação, abra o terminal e instale o "wget" com o seguinte comando:
       ```
       brew install wget
       ```
@@ -50,7 +50,7 @@ Para a instalação do Ruby nós vamos usar o **RVM**(*Ruby Version Manager*).
     ```
     rvm list
     ```
-  - **Visualizar** outras versões do Ruby **disponiveis para Instalação**:
+  - **Visualizar** outras versões do Ruby **disponíveis para Instalação**:
     ```
     rvm list known
     ```

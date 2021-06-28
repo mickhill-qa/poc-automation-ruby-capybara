@@ -69,6 +69,8 @@ when "chrome_headless"
     )
   end
   @driver = :selenium_chrome_headless
+when "firefox"
+  @driver = :selenium
 end
 
 ## Defaults

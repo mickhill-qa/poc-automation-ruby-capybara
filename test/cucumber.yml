@@ -11,6 +11,7 @@ progress: --format progress
 #Navegadores
 chrome: BROWSER=chrome
 chrome_headless: BROWSER=chrome_headless
+firefox: BROWSER=firefox
 
 #Caminhos dos relatorios 
 html: --format html --out=reports/report.html

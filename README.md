@@ -78,7 +78,7 @@ cucumber -t @myTag
 ---
 Alterar Ambientes de Execução
 -------------
-Por padrão os testes irão rodar usando a url de **DEV** conforme arquivo "**[environments.yml](test/features/support/config/environments.yml)**".
+Por padrão os testes irão rodar usando a url de **QA** conforme arquivo "**[environments.yml](test/features/support/config/environments.yml)**".
 
 Os ambiente disponíveis são:
 - dev
@@ -87,11 +87,11 @@ Os ambiente disponíveis são:
 
 Para alterar em tempo de execução, adicione o parâmetro "**ENV**" no terminal:
 ```
-cucumber ENV=qa
+cucumber ENV=dev
 ```
 Para alterar o padrão vá até o arquivo "**[cucumber.yml](test/cucumber.yml)**" e altere a linha 4:
 ```
-default: (...) -p dev
+default: (...) -p qa
 ```
 
 ---

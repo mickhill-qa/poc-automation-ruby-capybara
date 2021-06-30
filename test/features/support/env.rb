@@ -20,7 +20,7 @@ World Capybara::RSpecMatchers
 # prod, dev, qa
 SELECTED_ENV = ENV['ENV']
 if SELECTED_ENV.blank?
-  raise "Constante ENV está vazia.\nPor favor, especificar Ambiente: (prod, dev, qa).\nEx.:\n  $ cucumber ENV=dev\n    ou\n  $ cucumber -p dev\n\n"
+  raise "Constante ENV está vazia.\nPor favor, especificar Ambiente: (prod, dev, qa).\nEx.:\n  $ cucumber ENV=qa\n    ou\n  $ cucumber -p qa\n\n"
   RSpec.configure do |config|
     config.filter_run_excluding type: :feature
   end

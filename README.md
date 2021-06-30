@@ -22,26 +22,26 @@
 ### Estrutura do projeto
 ```
 ./
-├── test/
-│   ├── features/
-│   │   ├── hooks/
-│   │   ├── pages/
-│   │   ├── specs/
-│   │   ├── step_definitions/
-│   │   └── support/
-│   │       ├── config/
-│   │       │   └── environments.yml
-│   │       ├── helpers/
-│   │       │   ├── aws_secrets_helper.rb
-│   │       │   ├── page_helper.rb
-│   │       │   └── screenshot_helper.rb
-│   │       ├── env.rb
-│   │       └── report_builder.rb
-│   ├── reports/
-│   │   ├── report-builder/
-│   │   └── screenshots/
-│   └── cucumber.yml
+├── docs/
+├── features/
+│   ├── hooks/
+│   ├── pages/
+│   ├── specs/
+│   ├── step_definitions/
+│   └── support/
+│       ├── config/
+│       │   └── environments.yml
+│       ├── helpers/
+│       │   ├── aws_secrets_helper.rb
+│       │   ├── page_helper.rb
+│       │   └── screenshot_helper.rb
+│       ├── env.rb
+│       └── report_builder.rb
+├── reports/
+│   ├── report-builder/
+│   └── screenshots/
 ├── .gitignore
+├── cucumber.yml
 ├── Gemfile
 ├── Gemfile.lock
 └── README.md
@@ -49,72 +49,54 @@
 
 
 ---
-## Configurando ambiente local
+Configurar Ambiente
+-------------
+Assumimos que você já ***possui o Ruby disponível no terminal***, caso não possua segue um passo a passo.
+* [Instalar Ruby](docs/config-env/install-ruby.md)
 
-Assumimos que você já ***possui o Ruby disponível no terminal***. Agora você precisará do **ChormeDriver** disponível no terminal e do **bundler** para baixar todas as dependências dos pacotes do projeto, conforme o arquivo **[Gemfile.lock](https://github.com/mickhill-qa/learning-ruby-capybara/blob/main/Gemfile.lock)**.
-
-### Instalar Bundler
-Para instalar o bundler executando o seguinte comando no terminal:
-```
-    gem install bundler
-```
-Para baixar as dependências de pacote deste projeto abra a pasta "**[raiz](https://github.com/mickhill-qa/learning-ruby-capybara/tree/main/)**" no terminal e execute o comando:
-```
-    bundle install
-```
-
-
-### Instalar WebDriver
-Para configurar o **[ChormeDriver](https://chromedriver.chromium.org/downloads)** baixe o arquivo referente a sua versão de navegador.
-- No **Linux**: Descompacte o arquivo, abra o terminal nesta pasta e execute os seguintes comandos
-```
-    sudo mv chromedriver /usr/bin/chromedriver
-    sudo chown root:root /usr/bin/chromedriver
-    sudo chmod +x /usr/bin/chromedriver
-```
-- No **MacOS**: Descompacte o arquivo, abra o terminal nesta pasta e execute os seguintes comandos
-```
-    sudo mv chromedriver /usr/local/bin
-    sudo chmod +x /usr/local/bin/chromedriver
-```
-
-- No **Windows**: Descompacte na pasta "C:\Windows".
-
-
-### Instalar AWS toolkit plugin
-Para utilizar o "**[AWS Secrets Manager](https://docs.aws.amazon.com/pt_br/secretsmanager/latest/userguide/intro.html)**", será necessário instalar o plugin AWS toolkit plugin na IDE utilizada.
-- **VSCode**: Para instalar o plugin no Visual Studio Code deve seguir os passos neste link "**[VSCode](https://aws.amazon.com/visualstudiocode/)**".
-- **RubyMine**: Para instalar o plugin na Jetbrains deve seguir os passos neste link "**[RubyMine](https://docs.aws.amazon.com/toolkit-for-jetbrains/latest/userguide/setup-toolkit.html)**".
+Instale e configure uma IDE com o **AWS toolkit plugin** para possibilitar o uso do SecretsMenager para guardar as massas de testes do projeto.
+* [Instalar AWS toolkit plugin](docs/config-env/install-aws-toolkit-plugin.md)
+  
+Agora você precisará do **WebDriver** para uso do Browser e do **bundler** para baixar as dependências de pacotes do projeto ruby conforme o arquivo ***"[Gemfile](Gemfile)"***.
+* [Instalar WebDriver](docs/config-env/install-webdriver.md)
+* [Instalar Bundler](docs/config-env/install-bundler.md)
 
 
 ---
-## Executando testes localmente
-
-Para executar os testes localmente deste projeto abra a pasta "**[test/](https://github.com/mickhill-qa/learning-ruby-capybara/tree/main/test/)**" no terminal e execute o comando:
+Executar Testes
+-------------
+Para executar os testes localmente abra a pasta do projeto no terminal e execute o comando:
 ```
-    cucumber
+cucumber
 ```
 Ou para um cenário específico:
 ```
-    cucumber -t @myTag
+cucumber -t @myTag
 ```
 
 
-## Alternando execução entre ambientes
-
-Por padrão os testes iram rodar usando a url de **DEV** conforme arquivo "**[environments.yml](https://github.com/mickhill-qa/learning-ruby-capybara/blob/main/test/features/support/config/environments.yml)**". 
+---
+Alterar Ambientes de Execução
+-------------
+Por padrão os testes irão rodar usando a url de **QA** conforme arquivo "**[environments.yml](features/support/config/environments.yml)**".
 
 Os ambiente disponíveis são:
 - dev
 - qa
 - prod
 
-Para alterar em tempo de execução, adiciona o parâmetro "**ENV**" no terminal:
+Para alterar em tempo de execução, adicione o parâmetro "**ENV**" no terminal:
 ```
-    cucumber ENV=qa
+cucumber ENV=dev
+```
+Para alterar o padrão vá até o arquivo "**[cucumber.yml](cucumber.yml)**" e altere a linha 4:
+```
+default: (...) -p qa
 ```
 
-Para alterar o padrão vá até o arquivo "**[cucumber.yml](https://github.com/mickhill-qa/learning-ruby-capybara/blob/main/test/cucumber.yml)**" e altere a linha 4:
+---
+Caso queira apontar para uma **URL** específica:
 ```
-    default: (...) -p dev
+cucumber URL=http://url-do-ambiente.testes
 ```
+

@@ -189,13 +189,13 @@ PLATFORMS
   arm64-darwin-20
 
 DEPENDENCIES
-  aws-sdk-secretsmanager (~> 1.44)
+  aws-sdk-secretsmanager
   capybara
   cucumber
   json
   report_builder
   rspec
-  rubycritic (~> 4.6, >= 4.6.1)
+  rubycritic
   selenium-webdriver
   site_prism
 

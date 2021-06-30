@@ -20,7 +20,7 @@ World Capybara::RSpecMatchers
 # prod, dev, qa
 SELECTED_ENV = ENV['ENV']
 if SELECTED_ENV.blank?
-  raise "Constante ENV está vazia.\nPor favor, especificar Ambiente: (prod, dev, qa).\nEx.:\n  $ cucumber ENV=dev\n    ou\n  $ cucumber -p dev\n\n"
+  raise "Constante ENV está vazia.\nPor favor, especificar Ambiente: (prod, dev, qa).\nEx.:\n  $ cucumber ENV=qa\n    ou\n  $ cucumber -p qa\n\n"
   RSpec.configure do |config|
     config.filter_run_excluding type: :feature
   end
@@ -32,7 +32,7 @@ end
 SELECTED_BROWSER = ENV['BROWSER']
 case SELECTED_BROWSER
 when nil
-  raise "Constante BROWSER está vazia.\nPor favor, especificar Navegador: (chrome, chrome_headless).\nEx.:\n  $ cucumber BROWSER=chrome_headless\n    ou\n  $ cucumber -p chrome_headless\n\n"
+  raise "Constante BROWSER está vazia.\nPor favor, especificar Navegador: (chrome, chrome_headless, firefox ou firefox_headless).\nEx.:\n  $ cucumber BROWSER=chrome_headless\n    ou\n  $ cucumber -p chrome_headless\n\n"
   RSpec.configure do |config|
     config.filter_run_excluding type: :feature
   end
@@ -69,11 +69,26 @@ when "chrome_headless"
     )
   end
   @driver = :selenium_chrome_headless
+when "firefox"
+  @driver = :selenium
+when "firefox_headless"
+  Capybara.register_driver :selenium_firefox_headless do |app|
+    browser_options = ::Selenium::WebDriver::Firefox::Options.new.tap do |opts|
+      opts.args << '--headless'
+      opts.args << '--window-size=1366,768'
+    end
+    Capybara::Selenium::Driver.new(
+      app,
+      browser: :firefox,
+      options: browser_options
+    )
+  end
+  @driver = :selenium_firefox_headless
 end
 
 ## Defaults
 ENVIRONMENT     = YAML.load_file(File.dirname(__FILE__) + "/config/environments.yml")[SELECTED_ENV]
-BASE_URL        = !ENV['URL'].nil? ? ENV['URL'] : ENVIRONMENT['base_url']
+BASE_URL        = ( !ENV['URL'].nil? ? ENV['URL'] : ENVIRONMENT['base_url'] ) + "/"
 SCREENSHOT_PATH = "reports/screenshots/"
 REPORT_PATH     = "reports/report-builder/"
 

@@ -32,7 +32,7 @@ end
 SELECTED_BROWSER = ENV['BROWSER']
 case SELECTED_BROWSER
 when nil
-  raise "Constante BROWSER está vazia.\nPor favor, especificar Navegador: (chrome, chrome_headless).\nEx.:\n  $ cucumber BROWSER=chrome_headless\n    ou\n  $ cucumber -p chrome_headless\n\n"
+  raise "Constante BROWSER está vazia.\nPor favor, especificar Navegador: (chrome, chrome_headless, firefox ou firefox_headless).\nEx.:\n  $ cucumber BROWSER=chrome_headless\n    ou\n  $ cucumber -p chrome_headless\n\n"
   RSpec.configure do |config|
     config.filter_run_excluding type: :feature
   end
@@ -71,6 +71,19 @@ when "chrome_headless"
   @driver = :selenium_chrome_headless
 when "firefox"
   @driver = :selenium
+when "firefox_headless"
+  Capybara.register_driver :selenium_firefox_headless do |app|
+    browser_options = ::Selenium::WebDriver::Firefox::Options.new.tap do |opts|
+      opts.args << '--headless'
+      opts.args << '--window-size=1366,768'
+    end
+    Capybara::Selenium::Driver.new(
+      app,
+      browser: :firefox,
+      options: browser_options
+    )
+  end
+  @driver = :selenium_firefox_headless
 end
 
 ## Defaults

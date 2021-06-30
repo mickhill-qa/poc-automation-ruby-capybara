@@ -1,8 +1,8 @@
 ## YAML Templates
 ---
 #Tudo que será executado
-default: --publish-quiet -p pretty -p chrome -p html -p json -p dev
-ci: --publish-quiet -p progress -p chrome_headless -p html -p json -p dev
+default: --publish-quiet -p pretty -p firefox -p html -p json -p qa
+ci: --publish-quiet -p progress -p firefox_headless -p html -p json -p qa
 
 #Formato de execução
 pretty: --format pretty --color -r features
@@ -12,6 +12,7 @@ progress: --format progress
 chrome: BROWSER=chrome
 chrome_headless: BROWSER=chrome_headless
 firefox: BROWSER=firefox
+firefox_headless: BROWSER=firefox_headless
 
 #Caminhos dos relatorios 
 html: --format html --out=reports/report.html

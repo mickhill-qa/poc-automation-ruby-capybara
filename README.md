@@ -22,26 +22,26 @@
 ### Estrutura do projeto
 ```
 ./
-├── test/
-│   ├── features/
-│   │   ├── hooks/
-│   │   ├── pages/
-│   │   ├── specs/
-│   │   ├── step_definitions/
-│   │   └── support/
-│   │       ├── config/
-│   │       │   └── environments.yml
-│   │       ├── helpers/
-│   │       │   ├── aws_secrets_helper.rb
-│   │       │   ├── page_helper.rb
-│   │       │   └── screenshot_helper.rb
-│   │       ├── env.rb
-│   │       └── report_builder.rb
-│   ├── reports/
-│   │   ├── report-builder/
-│   │   └── screenshots/
-│   └── cucumber.yml
+├── docs/
+├── features/
+│   ├── hooks/
+│   ├── pages/
+│   ├── specs/
+│   ├── step_definitions/
+│   └── support/
+│       ├── config/
+│       │   └── environments.yml
+│       ├── helpers/
+│       │   ├── aws_secrets_helper.rb
+│       │   ├── page_helper.rb
+│       │   └── screenshot_helper.rb
+│       ├── env.rb
+│       └── report_builder.rb
+├── reports/
+│   ├── report-builder/
+│   └── screenshots/
 ├── .gitignore
+├── cucumber.yml
 ├── Gemfile
 ├── Gemfile.lock
 └── README.md
@@ -65,7 +65,7 @@ Agora você precisará do **WebDriver** para uso do Browser e do **bundler** par
 ---
 Executar Testes
 -------------
-Para executar os testes localmente deste projeto abra a pasta "**[test/](test/)**" no terminal e execute o comando:
+Para executar os testes localmente abra a pasta do projeto no terminal e execute o comando:
 ```
 cucumber
 ```
@@ -78,7 +78,7 @@ cucumber -t @myTag
 ---
 Alterar Ambientes de Execução
 -------------
-Por padrão os testes irão rodar usando a url de **QA** conforme arquivo "**[environments.yml](test/features/support/config/environments.yml)**".
+Por padrão os testes irão rodar usando a url de **QA** conforme arquivo "**[environments.yml](features/support/config/environments.yml)**".
 
 Os ambiente disponíveis são:
 - dev
@@ -89,7 +89,7 @@ Para alterar em tempo de execução, adicione o parâmetro "**ENV**" no terminal
 ```
 cucumber ENV=dev
 ```
-Para alterar o padrão vá até o arquivo "**[cucumber.yml](test/cucumber.yml)**" e altere a linha 4:
+Para alterar o padrão vá até o arquivo "**[cucumber.yml](cucumber.yml)**" e altere a linha 4:
 ```
 default: (...) -p qa
 ```

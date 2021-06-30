@@ -93,3 +93,10 @@ Para alterar o padrão vá até o arquivo "**[cucumber.yml](test/cucumber.yml)**
 ```
 default: (...) -p dev
 ```
+
+---
+Caso queira apontar para uma **URL** específica:
+```
+cucumber URL=http://url-do-ambiente.testes
+```
+

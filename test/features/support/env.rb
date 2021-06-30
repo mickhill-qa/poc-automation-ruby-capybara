@@ -75,7 +75,7 @@ end
 
 ## Defaults
 ENVIRONMENT     = YAML.load_file(File.dirname(__FILE__) + "/config/environments.yml")[SELECTED_ENV]
-BASE_URL        = !ENV['URL'].nil? ? ENV['URL'] : ENVIRONMENT['base_url']
+BASE_URL        = ( !ENV['URL'].nil? ? ENV['URL'] : ENVIRONMENT['base_url'] ) + "/"
 SCREENSHOT_PATH = "reports/screenshots/"
 REPORT_PATH     = "reports/report-builder/"
 

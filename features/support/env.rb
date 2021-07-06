@@ -43,6 +43,7 @@ when "chrome"
       opts.args << '--disable-site-isolation-trials'
       opts.args << '--start-maximized'
       opts.args << '--incognito'
+      opts.args << '--disable-dev-shm-usage'
     end
     Capybara::Selenium::Driver.new(
       app,
@@ -61,6 +62,7 @@ when "chrome_headless"
       opts.args << '--incognito'
       opts.args << '--window-size=1366x768'
       opts.args << '--disable-site-isolation-trials'
+      opts.args << '--disable-dev-shm-usage'
     end
     Capybara::Selenium::Driver.new(
       app,

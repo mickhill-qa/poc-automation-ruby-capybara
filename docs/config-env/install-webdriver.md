@@ -3,7 +3,8 @@ Abra o site do **[ChormeDriver](https://chromedriver.chromium.org/downloads)** e
 
 ---
 #### **Windows**
-Baixe o arquivo referente a sua versão de navegador e descompacte na pasta ***"C:\Windows"***.
+- Baixe o arquivo referente a sua versão de navegador;
+- Descompacte na pasta ***"C:\Windows"***; Ou crie uma pasta de sua preferência e adicione-a as Variáveis de Ambiente.
 
 ---
 #### **Linux**

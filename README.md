@@ -1,6 +1,6 @@
-[ruby-image]: https://img.shields.io/badge/ruby-2.7.2-red
+[ruby-image]: https://img.shields.io/badge/ruby-2.7-red
 [ruby-url]: https://www.ruby-lang.org/pt/
-[cucumber-image]: https://img.shields.io/badge/cucumber-5.3.0-brightgreen
+[cucumber-image]: https://img.shields.io/badge/cucumber-6.1.0-brightgreen
 [cucumber-url]: https://cucumber.io/docs/installation/ruby/
 [capybara-image]: https://img.shields.io/badge/capybara-3.35.3-purple
 [capybara-url]: https://teamcapybara.github.io/capybara/
@@ -49,8 +49,7 @@
 
 
 ---
-Configurar Ambiente
--------------
+## Configurar Ambiente
 Assumimos que você já ***possui o Ruby disponível no terminal***, caso não possua segue um passo a passo.
 * [Instalar Ruby](docs/config-env/install-ruby.md)
 
@@ -63,8 +62,7 @@ Agora você precisará do **WebDriver** para uso do Browser e do **bundler** par
 
 
 ---
-Executar Testes
--------------
+## Executar Testes
 Para executar os testes localmente abra a pasta do projeto no terminal e execute o comando:
 ```
 cucumber
@@ -76,9 +74,8 @@ cucumber -t @myTag
 
 
 ---
-Alterar Ambientes de Execução
--------------
-Por padrão os testes irão rodar usando a url de **QA** conforme arquivo "**[environments.yml](features/support/config/environments.yml)**".
+## Alterar Ambientes de Execução
+Por padrão os testes irão rodar usando a url de **qa** conforme arquivo "**[environments.yml](features/support/config/environments.yml)**".
 
 Os ambiente disponíveis são:
 - dev

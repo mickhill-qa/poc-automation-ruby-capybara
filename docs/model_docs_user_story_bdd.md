@@ -1,28 +1,31 @@
 # Feature
-```
+
+```text
 EU COMO usuário
 QUERO 
 PARA 
 ```
 
-
 ## Critérios de Aceitação
-```
+
+```text
 Critério 1: ...
 ```
 
-## Contexto: 
-~~~gherkin
+## Contexto
+
+```gherkin
 ...
-~~~
+```
 
+## Cenário
 
-## Cenário: ...
-#### @tag
-~~~gherkin
+### @tag
+
+```gherkin
 ...
-~~~
-
+```
 
 ## Fonte
-https://www.figma.com/
+
+<https://www.figma.com/>

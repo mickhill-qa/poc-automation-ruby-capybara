@@ -72,6 +72,10 @@ Agora você precisará do **WebDriver** para uso do Browser e do **bundler** par
 - [Instalar WebDriver](docs/config-env/install-webdriver.md)
 - [Instalar Bundler](docs/config-env/install-bundler.md)
 
+Para desenvolver localmente recomendamos usar o VS Code com alguns plugins:
+
+- [Configurar VS Code](docs/config-env/config-vscode.md)
+
 ---
 
 ## Executar Testes

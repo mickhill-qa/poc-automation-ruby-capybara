@@ -2,12 +2,12 @@
 ---
 #Tudo que será executado
 default: --publish-quiet -p pretty -p chrome -p html -p json -p qa
-ci: --publish-quiet -p progress -p chrome_headless -p html -p json -p qa
+ci: --publish-quiet -p progress -p chrome_headless -p html -p json
 ci_debug: --publish-quiet -p pretty -p chrome_headless -p html -p json
 
 #Formato de execução
 pretty: --format pretty --color -r features
-progress: --format progress
+progress: --format progress --color -r features CI=true
 
 #Navegadores
 chrome: BROWSER=chrome

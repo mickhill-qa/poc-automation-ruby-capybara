@@ -40,9 +40,8 @@
 │       ├── config/
 │       │   └── environments.yml
 │       ├── helpers/
-│       │   ├── aws_secrets_helper.rb
-│       │   ├── page_helper.rb
-│       │   └── screenshot_helper.rb
+│       │   ├── secrets_helper.rb
+│       │   └── steps_helper.rb
 │       ├── env.rb
 │       └── report_builder.rb
 ├── reports/

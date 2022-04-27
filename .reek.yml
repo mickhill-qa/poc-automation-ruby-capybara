@@ -1,0 +1,18 @@
+---
+
+# Excecoes do Rubycritic
+detectors:
+
+  UtilityFunction:
+    exclude:
+      - "SecretsHelper"
+
+  UncommunicativeVariableName:
+    accept:
+      - e
+
+  TooManyStatements:
+    enabled: true
+    exclude:
+    - "AwsSecretsHelper"
+    max_statements: 20

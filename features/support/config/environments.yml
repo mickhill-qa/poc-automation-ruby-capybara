@@ -1,14 +1,8 @@
 dev:
   base_url: 'https://www.google.com.br'
-  aws_secret_name: ''
-  aws_region_name: ''
 
 qa:
   base_url: 'https://www.google.com.br'
-  aws_secret_name: ''
-  aws_region_name: ''
 
 prod:
   base_url: 'https://www.google.com.br'
-  aws_secret_name: ''
-  aws_region_name: ''

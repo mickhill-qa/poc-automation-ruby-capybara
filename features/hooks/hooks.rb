@@ -1,16 +1,14 @@
+# frozen_string_literal: true
+
 ### Global ###
 # Before do
 #     log 'Inicio de todos os Cenarios.'
 # end
 
 After do |scenario|
-  scenario_name = scenario.name.gsub(/[^\w\-]/, ' ')
-
-  if scenario.failed?
-    screenshot_erro(scenario_name.downcase!)
-  end
+  scenario_name = scenario.name.gsub(/[^\w\-]/, '_')
+  screenshot_name("ERRO_#{scenario_name.downcase!}") if scenario.failed?
 end
-
 
 ### Tag ###
 # Before '@pesquisaUndefined' do

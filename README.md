@@ -12,6 +12,15 @@
 [report_builder-url]: https://reportbuilder.rajatthareja.com/
 
 # poc-automation-ruby-capybara
+
+## Business Feature
+
+### **Site Google**
+
+- [/google_pesquisa](features/specs/google_pesquisa.feature)
+
+## Estrutura do projeto
+
 [![Ruby Version][ruby-image]][ruby-url]
 [![Capybara Version][capybara-image]][capybara-url]
 [![Cucumber Version][cucumber-image]][cucumber-url]
@@ -19,8 +28,7 @@
 [![SitePrism Version][site_prism-image]][site_prism-url]
 [![ReportBuilder Version][report_builder-image]][report_builder-url]
 
-### Estrutura do projeto
-```
+```text
 ./
 ├── docs/
 ├── features/
@@ -32,9 +40,8 @@
 │       ├── config/
 │       │   └── environments.yml
 │       ├── helpers/
-│       │   ├── aws_secrets_helper.rb
-│       │   ├── page_helper.rb
-│       │   └── screenshot_helper.rb
+│       │   ├── secrets_helper.rb
+│       │   └── steps_helper.rb
 │       ├── env.rb
 │       └── report_builder.rb
 ├── reports/
@@ -47,53 +54,70 @@
 └── README.md
 ```
 
-
 ---
+
 ## Configurar Ambiente
+
 Assumimos que você já ***possui o Ruby disponível no terminal***, caso não possua segue um passo a passo.
-* [Instalar Ruby](docs/config-env/install-ruby.md)
+
+- [Instalar Ruby](docs/config-env/install-ruby.md)
 
 Instale e configure uma IDE com o **AWS toolkit plugin** para possibilitar o uso do SecretsMenager para guardar as massas de testes do projeto.
-* [Instalar AWS toolkit plugin](docs/config-env/install-aws-toolkit-plugin.md)
+
+- [Instalar AWS toolkit plugin](docs/config-env/install-aws-toolkit-plugin.md)
   
 Agora você precisará do **WebDriver** para uso do Browser e do **bundler** para baixar as dependências de pacotes do projeto ruby conforme o arquivo ***"[Gemfile](Gemfile)"***.
-* [Instalar WebDriver](docs/config-env/install-webdriver.md)
-* [Instalar Bundler](docs/config-env/install-bundler.md)
 
+- [Instalar WebDriver](docs/config-env/install-webdriver.md)
+- [Instalar Bundler](docs/config-env/install-bundler.md)
+
+Para desenvolver localmente recomendamos usar o VS Code com alguns plugins:
+
+- [Configurar VS Code](docs/config-env/config-vscode.md)
 
 ---
+
 ## Executar Testes
+
 Para executar os testes localmente abra a pasta do projeto no terminal e execute o comando:
-```
+
+```bash
 cucumber
 ```
+
 Ou para um cenário específico:
-```
+
+```bash
 cucumber -t @myTag
 ```
 
-
 ---
+
 ## Alterar Ambientes de Execução
+
 Por padrão os testes irão rodar usando a url de **qa** conforme arquivo "**[environments.yml](features/support/config/environments.yml)**".
 
 Os ambiente disponíveis são:
+
 - dev
 - qa
 - prod
 
 Para alterar em tempo de execução, adicione o parâmetro "**ENV**" no terminal:
-```
+
+```bash
 cucumber ENV=dev
 ```
+
 Para alterar o padrão vá até o arquivo "**[cucumber.yml](cucumber.yml)**" e altere a linha 4:
-```
+
+```text
 default: (...) -p qa
 ```
 
 ---
 Caso queira apontar para uma **URL** específica:
-```
+
+```bash
 cucumber URL=http://url-do-ambiente.testes
 ```
-

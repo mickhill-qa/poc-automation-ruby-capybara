@@ -1,0 +1,11 @@
+# local development in VScode:
+# bundle config set --local gemfile Gemfile.local
+
+# Include the regular Gemfile
+eval File.read('Gemfile')
+
+gem 'solargraph'
+gem 'rubocop'
+gem 'debase'
+gem 'ruby-debug-ide'
+gem 'rubycritic', require: false

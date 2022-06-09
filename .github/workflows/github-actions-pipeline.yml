@@ -1,0 +1,20 @@
+name: Pipeline Ruby Cucumber Selenium - GitHub Actions
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@359bebbc29cbe6c87da6bc9ea3bc930432750108
+        with:
+          ruby-version: '2.7'
+      - uses: actions/checkout@v2
+      - uses: nanasess/setup-chromedriver@v1
+        with:
+          # Optional: do not specify to match Chrome's version
+          chromedriver-version: '102.0.5005.61'
+      - name: Dependencias
+        run: bundle install
+      - name: Run tests
+        run: cucumber -p ci_debug -p qa

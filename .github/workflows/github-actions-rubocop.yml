@@ -1,5 +1,5 @@
 # https://docs.github.com/pt/actions/automating-builds-and-tests/building-and-testing-ruby
-name: Cucumber
+name: Rubocop
 
 on: [push]
 
@@ -12,12 +12,8 @@ jobs:
         with:
           ruby-version: '2.7'
 
-      - uses: actions/checkout@v2
-      - uses: nanasess/setup-chromedriver@v1
-        with:
-          chromedriver-version: '102.0.5005.61'
+      - run: bundle config set --local gemfile Gemfile.local
+      - run: bundle install
 
-      - name: Install dependencies
-        run: bundle install
-      - name: Run Cucumber tests
-        run: cucumber -p ci_debug -p qa
+      - name: Run Rubocop tests
+        run: rubocop

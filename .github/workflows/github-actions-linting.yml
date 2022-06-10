@@ -1,17 +1,7 @@
 # https://docs.github.com/pt/actions/automating-builds-and-tests/building-and-testing-ruby
-name: Reek
+name: Linting
 
-on:
-  pull_request:
-    branches:
-      - main
-      - develop
-
-  push:
-    branches:
-      - main
-      - develop
-      - 'feature/**'
+on: [push]
 
 jobs:
   test:
@@ -22,8 +12,10 @@ jobs:
         with:
           ruby-version: '2.7'
 
-      - run: bundle config set --local gemfile Gemfile.local
-      - run: bundle install
+      - name: Install dependencies
+        run: |
+          bundle config set --local gemfile Gemfile.local
+          bundle install
 
-      - name: Run Reek tests
-        run: reek .
+      - name: Run Rubocop
+        run: rubocop

@@ -1,0 +1,3 @@
+AllCops:
+  NewCops: disable
+  SuggestExtensions: false

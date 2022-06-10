@@ -29,5 +29,5 @@ jobs:
 
       - name: Install dependencies
         run: bundle install
-      - name: Run Cucumber tests
+      - name: Run Cucumber Tests
         run: cucumber -p ci_debug -p qa

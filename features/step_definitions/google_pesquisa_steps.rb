@@ -16,7 +16,9 @@ Quando('eu pesquisar por {string}') do |text_pesq|
 end
 
 Entao('me retorna os resultados indexados') do
-  expect(page).to have_content 'Aproximadamente '
+  @page_results = GoogleResults.new
+  number_screen = @page_results.n_resultados
+  expect(number_screen).to be >= 1
   screenshot
 end
 

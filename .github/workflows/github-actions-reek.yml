@@ -1,0 +1,19 @@
+# https://docs.github.com/pt/actions/automating-builds-and-tests/building-and-testing-ruby
+name: Reek
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@359bebbc29cbe6c87da6bc9ea3bc930432750108
+        with:
+          ruby-version: '2.7'
+
+      - run: bundle config set --local gemfile Gemfile.local
+      - run: bundle install
+
+      - name: Run Reek tests
+        run: reek .

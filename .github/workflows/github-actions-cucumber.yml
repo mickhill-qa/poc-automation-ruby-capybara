@@ -12,6 +12,8 @@ on:
       - main
       - develop
       - 'feature/**'
+    tags:
+      - '**'
 
 jobs:
   test:

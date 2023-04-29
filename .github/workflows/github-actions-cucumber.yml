@@ -27,10 +27,16 @@ jobs:
         with:
           ruby-version: '2.7'
 
-      - name: Configure WebDriver for Chrome
-        uses: nanasess/setup-chromedriver@v1
-        with:
-          chromedriver-version: '102.0.5005.61'
+      - name: Installed package list
+        run: apt list --installed
+      - name: Remove Chrome
+        run: sudo apt purge google-chrome-stable
+      - name: Remove default Chromium
+        run: sudo apt purge chromium-browser
+      - name: Install a new Chromium
+        run: sudo apt install -y chromium-browser
+      - name: Install all necessary packages
+        run: pip install requests beautifulsoup4 pandas webdriver-manager selenium
 
       - name: Install dependencies
         run: bundle install

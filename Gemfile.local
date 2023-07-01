@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # local development in VScode:
 # bundle config set --local gemfile Gemfile.local
 
@@ -9,9 +10,3 @@ gem 'rubocop'
 gem 'debase'
 gem 'ruby-debug-ide'
 gem 'rubycritic', require: false
-
-group :test do
-  gem 'cucumber-rails', require: false
-  # database_cleaner is not mandatory, but highly recommended
-  gem 'database_cleaner'
-end

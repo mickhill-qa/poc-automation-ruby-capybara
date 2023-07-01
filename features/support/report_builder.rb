@@ -18,7 +18,7 @@ at_exit do
   ReportBuilder.build_report
 
   if ENV['GITHUB_REPORT']
-    link_github_pages = "https://mickhill-qa.github.io/poc-automation-ruby-capybara/"
+    link_github_pages = 'https://mickhill-qa.github.io/poc-automation-ruby-capybara/'
     link_arquivo = "#{link_github_pages}#{nome_arquivo}.#{ReportBuilder.report_types[0].downcase}"
   else
     link_arquivo = "#{ReportBuilder.report_path}.#{ReportBuilder.report_types[0].downcase}"

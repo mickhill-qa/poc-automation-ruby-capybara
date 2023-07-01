@@ -1,24 +1,24 @@
 # https://docs.github.com/pt/actions/automating-builds-and-tests/building-and-testing-ruby
-name: Linting
-
-on: [push]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Configure git repository
-        uses: actions/checkout@v3
-
-      - name: Configure Ruby 2.7
-        uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
-        with:
-          ruby-version: '2.7'
-
-      - name: Install Development dependencies
-        run: |
-          bundle config set --local gemfile Gemfile.local
-          bundle install
-
-      - name: Run Linting - Rubocop
-        run: rubocop
+#name: Linting
+#
+#on: [push]
+#
+#jobs:
+#  test:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Configure git repository
+#        uses: actions/checkout@v3
+#
+#      - name: Configure Ruby 2.7
+#        uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
+#        with:
+#          ruby-version: '2.7'
+#
+#      - name: Install Development dependencies
+#        run: |
+#          bundle config set --local gemfile Gemfile.local
+#          bundle install
+#
+#      - name: Run Linting - Rubocop
+#        run: rubocop

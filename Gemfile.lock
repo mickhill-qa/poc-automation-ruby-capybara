@@ -140,6 +140,7 @@ GEM
 PLATFORMS
   arm64-darwin-20
   arm64-darwin-21
+  arm64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
@@ -154,4 +155,4 @@ DEPENDENCIES
   site_prism
 
 BUNDLED WITH
-   2.3.6
+   2.4.12

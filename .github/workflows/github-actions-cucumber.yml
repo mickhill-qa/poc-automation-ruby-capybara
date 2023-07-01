@@ -15,6 +15,11 @@ on:
     tags:
       - '**'
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -23,17 +28,32 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Configure Ruby 2.7
-        uses: ruby/setup-ruby@359bebbc29cbe6c87da6bc9ea3bc930432750108
+        uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
         with:
           ruby-version: '2.7'
 
       - name: Configure WebDriver for Chrome
-        uses: nanasess/setup-chromedriver@v1
-        with:
-          chromedriver-version: '102.0.5005.61'
+        run:  |
+          apt list --installed
+          sudo apt purge google-chrome-stable
+          sudo apt purge chromium-browser
+          sudo apt install -y chromium-browser
+          pip install requests beautifulsoup4 pandas webdriver-manager selenium
 
       - name: Install dependencies
         run: bundle install
 
       - name: Run Cucumber Tests
-        run: cucumber -p ci_debug -p qa
+        run: cucumber -p ci_debug -p qa GITHUB_REPORT=true
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload arquivos
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: 'reports/report-builder'
+
+      - name: Deploy arquivos no GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

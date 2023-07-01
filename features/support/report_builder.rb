@@ -2,11 +2,11 @@
 
 ## Gerar relatorio ao final da execucao
 at_exit do
-  data_de_execucao = Time.now.strftime('%Y-%m-%d_-_%H-%M-%S')
+  nome_arquivo = "#{Time.now.strftime('%Y-%m-%d_-_%H-%M-%S')}_-_#{SELECTED_ENV}_web_#{SELECTED_BROWSER}"
 
   ReportBuilder.configure do |config|
     config.json_path = 'reports/report.json'
-    config.report_path = "#{REPORT_PATH}#{data_de_execucao}_-_#{SELECTED_ENV}_web_#{SELECTED_BROWSER}"
+    config.report_path = "#{REPORT_PATH}#{nome_arquivo}"
     config.report_types = [:html]
     config.report_title = 'poc-automation-ruby-capybara' # nome do report - <img src='#' />
     config.color = 'green'
@@ -17,5 +17,11 @@ at_exit do
   end
   ReportBuilder.build_report
 
-  puts "\nReportBuilder \n#{ReportBuilder.report_path}.#{ReportBuilder.report_types[0].downcase}"
+  if ENV['GITHUB_REPORT']
+    link_github_pages = "https://mickhill-qa.github.io/poc-automation-ruby-capybara/"
+    link_arquivo = "#{link_github_pages}#{nome_arquivo}.#{ReportBuilder.report_types[0].downcase}"
+  else
+    link_arquivo = "#{ReportBuilder.report_path}.#{ReportBuilder.report_types[0].downcase}"
+  end
+  puts "\nReportBuilder \n#{link_arquivo}"
 end

@@ -15,6 +15,11 @@ on:
     tags:
       - '**'
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -40,3 +45,15 @@ jobs:
 
       - name: Run Cucumber Tests
         run: cucumber -p ci_debug -p qa
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: 'reports/report-builder'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
